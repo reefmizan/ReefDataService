@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDB.cs" />
+    <Compile Include="CommentsDB.cs" />
+    <Compile Include="LocationsDB.cs" />
+    <Compile Include="SurfClubsDB.cs" />
     <Compile Include="TypeSurfDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserDB.cs" />
@@ -56,6 +59,9 @@
       <Project>{C50BB1BC-25F5-4315-AE64-2CB72F7EEF9A}</Project>
       <Name>Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ViewModelDiagram.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

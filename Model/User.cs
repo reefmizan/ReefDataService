@@ -9,7 +9,7 @@ namespace Model
 {
     public class User:BaseEntity
     {
-        protected string firstName;
+        protected string firstname;
         protected bool isAdmin;
         protected string lastname;
         protected string phonenum;
@@ -21,8 +21,8 @@ namespace Model
 
         public string FirstName
         {
-            get { return firstName; }
-            set { firstName = value; }
+            get { return firstname; }
+            set { firstname = value; }
         }
         public bool IsAdmin
         {
@@ -59,17 +59,15 @@ namespace Model
             get { return surfslst; }
             set { surfslst = value; }
         }
-
-
     }
     public class UserList : List<User>
     {
         //בנאי ברירת מחדל - אוסף ריק
         public UserList() { }
-        //המרה אוסף גנרי לרשימת ערים
+        //המרה אוסף גנרי לרשימת משתמשים
         public UserList(IEnumerable<User> list)
             : base(list) { }
-        //המרה מטה מטיפוס בסיס לרשימת ערים
+        //המרה מטה מטיפוס בסיס לרשימת משתמשים
         public UserList(IEnumerable<BaseEntity> list)
             : base(list.Cast<User>().ToList()) { }
     }
