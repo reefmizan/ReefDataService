@@ -60,7 +60,7 @@ namespace ViewModel
         }
         public int Insert(User user)
         {
-            command.CommandText = "INSERT INTO tblUsers ([password], firstname, lastname, birthday, phone, email, isAdmin) VALUES (@password, @firstname, @lastname, @birthday, @phone, @email, @isAdmin";
+            command.CommandText = "INSERT INTO tblUsers ([password], firstname, lastname, birthday, phone, email, isAdmin) VALUES (@password, @firstname, @lastname, @birthday, @phone, @email, @isAdmin)";
             LoadParameters(user);
             return ExecuteCRUD();
         }

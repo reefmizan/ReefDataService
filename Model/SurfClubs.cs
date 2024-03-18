@@ -1,27 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Model
 {
+    [DataContract]
     public class SurfClubs : BaseEntity
     {
         protected string name;
         protected Locations location;
+        [DataMember]
         public string Name
         {
             get { return name; }
             set { name = value; }
         }
+        [DataMember]
         public Locations Location
         {
             get { return location; }
             set { location = value; }
         }
     }
-        public class SurfClubsList : List<SurfClubs>
+    [CollectionDataContract]
+    public class SurfClubsList : List<SurfClubs>
         {
             //בנאי ברירת מחדל - אוסף ריק
             public SurfClubsList() { }

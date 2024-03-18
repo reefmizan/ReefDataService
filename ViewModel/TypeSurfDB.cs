@@ -19,6 +19,8 @@ namespace ViewModel
             TypeSurf item = entity as TypeSurf;
             item.ID = int.Parse(reader["id"].ToString());
             item.Name = reader["name"].ToString();
+            item.Description = reader["description"].ToString();
+            item.URLS = reader["URLS"].ToString();
             return item;
         }
         protected override void LoadParameters(BaseEntity entity)
@@ -26,18 +28,20 @@ namespace ViewModel
             TypeSurf item = entity as TypeSurf;
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@name", item.Name);
+            command.Parameters.AddWithValue("@description", item.Description);
             command.Parameters.AddWithValue("@id", item.ID);
+            command.Parameters.AddWithValue("@URLS", item.URLS);
 
         }
         public int Insert(TypeSurf typeSurf)
         {
-            command.CommandText = "INSERT INTO tblTypeSurf (name) VALUES (@name)";
+            command.CommandText = "INSERT INTO tblTypeSurf (name,description) VALUES (@name,@description,@urls)";
             LoadParameters(typeSurf);
             return ExecuteCRUD();
         }
         public int Update(TypeSurf typeSurf)
         {
-            command.CommandText = "UPDATE tblTypeSurf SET name = @name WHERE (id = @id)";
+            command.CommandText = "UPDATE tblTypeSurf SET name = @name,description = @description,URLS = @urls WHERE (id = @id)";
             LoadParameters(typeSurf);
             return ExecuteCRUD();
         }
@@ -49,7 +53,7 @@ namespace ViewModel
         }
         public TypeSurfList SelectAll()
         {
-            command.CommandText = "SELECT * FORM tblTypeSurf";
+            command.CommandText = "SELECT * FROM tblTypeSurf";
             return new TypeSurfList(ExecuteCommand());
         }
         public TypeSurfList SelectByUser(User user)
@@ -58,14 +62,7 @@ namespace ViewModel
                 $"FROM (tblUserTypeSurf INNER JOIN tblTypeSurf ON tblUserTypeSurf.TypeSurfid = tblTypeSurf.id) " +
                 $"WHERE (tblUserTypeSurf.Userid = {user.ID})";
             return new TypeSurfList(ExecuteCommand());
-        }
-        //public TypeSurfList SelectByLocations(Locations location)
-        //{
-        //    command.CommandText = $"SELECT * " +
-        //        $"FROM (tblUserTypeSurf INNER JOIN tblTypeSurf ON tblUserTypeSurf.TypeSurfid = tblTypeSurf.id) " +
-        //        $"WHERE (tblUserTypeSurf.Userid = {user.ID}";
-        //    return new TypeSurfList(ExecuteCommand());
-        //}
+        }       
         public TypeSurfList SelectByID(int id)
         {
             command.CommandText = "SELECT * FORM tblTypeSurf " +
