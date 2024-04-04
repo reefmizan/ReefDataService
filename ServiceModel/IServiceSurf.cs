@@ -30,6 +30,7 @@ namespace ServiceModel
         [OperationContract] int InsertSurfClubs(SurfClubs surfClubs);
         [OperationContract] int UpdateSurfClubs(SurfClubs surfClubs);
         [OperationContract] int DeleteSurfClubs(SurfClubs surfClubs);
+        [OperationContract] SurfClubsList SelectByLocation(int location);
         #endregion
         #region Locations
         [OperationContract] LocationsList GetAllLocations();

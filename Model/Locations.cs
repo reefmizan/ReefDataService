@@ -12,7 +12,6 @@ namespace Model
     {
         protected string name;
         protected string description;
-        protected string weatherlink;
         protected string cord;
         [DataMember]
         public string Name
@@ -26,12 +25,7 @@ namespace Model
             get { return description; }
             set { description = value; }
         }
-        [DataMember]
-        public string WeatherLink
-        {
-            get { return weatherlink; }
-            set { weatherlink = value; }
-        }
+        
         [DataMember]
         public string Cord
         {

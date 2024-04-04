@@ -17,7 +17,11 @@ namespace ViewModel
             surfclub.Name = reader["name"].ToString();
             LocationsDB ldb = new LocationsDB();
             int lcid = int.Parse(reader["id"].ToString());
-            surfclub.Location = ldb.SelectByID(lcid); 
+            surfclub.Description = reader["description"].ToString();
+            surfclub.Location = ldb.SelectByID(lcid);
+            surfclub.Cord = reader["cord"].ToString();
+
+
             return surfclub;
             
         }
@@ -33,16 +37,20 @@ namespace ViewModel
             command.Parameters.AddWithValue("@name", surfclub.Name);
             command.Parameters.AddWithValue("@location", surfclub.Location.ID);
             command.Parameters.AddWithValue("@id", surfclub.ID);
+            command.Parameters.AddWithValue("@cord", surfclub.Cord);
+            command.Parameters.AddWithValue("@description", surfclub.Description);
+
+
         }
         public int Insert(SurfClubs surfClubs)
         {
-            command.CommandText = "INSERT INTO tblSurfClubs (name, location) VALUES (@name, @location)";
+            command.CommandText = "INSERT INTO tblSurfClubs (name, location, cord, description) VALUES (@name, @location, @cord, @description)";
             LoadParameters(surfClubs);
             return ExecuteCRUD();
         }
         public int Update(SurfClubs surfClubs)
         {
-            command.CommandText = "UPDATE tblSurfClubs SET name = @name, location = @location WHERE (id = @id)";
+            command.CommandText = "UPDATE tblSurfClubs SET name = @name, location = @location, cord = @cord, description = @description WHERE (id = @id)";
             LoadParameters(surfClubs);
             return ExecuteCRUD();
         }
@@ -65,6 +73,12 @@ namespace ViewModel
             if (list.Count == 0)
                 return null;
             return list[0];
+        }
+        public SurfClubsList SelectByLocation(int location)
+        {
+            command.CommandText = $"SELECT * FROM tblSurfClubs WHERE (location = {location})";
+            SurfClubsList list = new SurfClubsList(ExecuteCommand());
+            return list;
         }
     }
 }

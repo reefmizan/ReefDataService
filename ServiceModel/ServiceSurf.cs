@@ -103,6 +103,12 @@ namespace ServiceModel
             int num = db.Delete(surfClubs);
             return num;
         }
+        public SurfClubsList SelectByLocation(int location)
+        {
+            SurfClubsDB db = new SurfClubsDB();
+            SurfClubsList surfClubs = db.SelectByLocation(location);
+            return surfClubs;
+        }
         #endregion
         #region Locations
         public LocationsList GetAllLocations()

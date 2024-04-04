@@ -12,6 +12,8 @@ namespace Model
     {
         protected string name;
         protected Locations location;
+        protected string description;
+        protected string cord;
         [DataMember]
         public string Name
         {
@@ -24,6 +26,19 @@ namespace Model
             get { return location; }
             set { location = value; }
         }
+        [DataMember]
+        public string Cord
+        {
+            get { return cord; }
+            set { cord = value; }
+        }
+        [DataMember]
+        public string Description
+        {
+            get { return description; }
+            set { description = value; }
+        }
+
     }
     [CollectionDataContract]
     public class SurfClubsList : List<SurfClubs>

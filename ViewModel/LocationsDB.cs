@@ -16,11 +16,7 @@ namespace ViewModel
             location.ID = int.Parse(reader["id"].ToString());
             location.Name = reader["name"].ToString();
             location.Description = reader["description"].ToString();
-            location.WeatherLink = reader["weatherLink"].ToString();
             location.Cord = reader["cord"].ToString();
-            //TypeSurfDB sdb = new TypeSurfDB();
-            //user.Surfslst = sdb.SelectByUser(user);
-            //return user;
             return location;
         }
 
@@ -34,7 +30,6 @@ namespace ViewModel
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@name", location.Name);
             command.Parameters.AddWithValue("@description", location.Description);
-            command.Parameters.AddWithValue("@weatherLink", location.WeatherLink);
             command.Parameters.AddWithValue("@cord", location.Cord);
             command.Parameters.AddWithValue("@id", location.ID);
         }
@@ -46,13 +41,13 @@ namespace ViewModel
         }
         public int Insert(Locations locations)
         {
-            command.CommandText = "INSERT INTO tblLocations (name, description, weatherLink, cord) VALUES (@name, @description, @weatherLink, @cord)";
+            command.CommandText = "INSERT INTO tblLocations (name, description, cord) VALUES (@name, @description, @cord)";
             LoadParameters(locations);
             return ExecuteCRUD();
         }
         public int Update(Locations locations)
         {
-            command.CommandText = "UPDATE tblLocations SET name = @name, description = @description, weatherLink = @weatherLink, cord =@cord WHERE (id = @id)";
+            command.CommandText = "UPDATE tblLocations SET name = @name, description = @description, cord =@cord WHERE (id = @id)";
             LoadParameters(locations);
             return ExecuteCRUD();
         }
