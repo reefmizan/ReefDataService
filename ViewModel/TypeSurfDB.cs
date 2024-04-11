@@ -69,5 +69,15 @@ namespace ViewModel
                 $" WHERE (id = {id})";
             return new TypeSurfList(ExecuteCommand());
         }
+        public int InsertType(TypeSurf typeSurf,User user)
+        {
+            command.CommandText = $"INSERT INTO tblUserTypeSurf (Userid,TypeSurfid) VALUES ({user.ID},{typeSurf.ID})";
+            return ExecuteCRUD();
+        }
+        public int DeleteType(TypeSurf typeSurf,User user)
+        {
+            command.CommandText = $"DELETE FROM tblUserTypeSurf WHERE (Userid={user.ID} AND TypeSurfid={typeSurf.ID}) ";
+            return ExecuteCRUD();
+        }
     }
 }

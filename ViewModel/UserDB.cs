@@ -66,7 +66,7 @@ namespace ViewModel
         }
         public int Update(User user)
         {
-            command.CommandText = "UPDATE tblUsers SET [password] = @password, firstname = @firstname, lastname = @lastname, birthday = @birthday, phoneNum = @phoneNum, email = @email, isAdmin = @isAdmin WHERE (id = @id)";
+            command.CommandText = "UPDATE tblUsers SET [password] = @password, firstname = @firstname, lastname = @lastname, birthday = @birthday, phone = @phone, email = @email, isAdmin = @isAdmin WHERE (id = @id)";
             LoadParameters(user);
             return ExecuteCRUD();
         }

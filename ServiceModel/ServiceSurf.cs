@@ -37,7 +37,15 @@ namespace ServiceModel
         {
             UserDB db = new UserDB();
             int num = db.Insert(user);
-            return num;
+            if (num == 0) return -1;
+            user.ID= db.SelectAll().Last().ID; //get user Id
+            TypeSurfDB surfDB=new TypeSurfDB();
+            foreach (TypeSurf type in user.Surfslst)
+            {
+                if (surfDB.InsertType(type, user) == 0)
+                    return -1;
+            }
+            return 1;
         }
         public int UpdateUser(User user)
         {
@@ -47,6 +55,11 @@ namespace ServiceModel
         }
         public int DeleteUser(User user)
         {
+            TypeSurfDB typeSurfDB = new TypeSurfDB();
+            foreach (TypeSurf type in user.Surfslst)
+            {
+                typeSurfDB.DeleteType(type, user);
+            }
             UserDB db = new UserDB();
             int num = db.Delete(user);
             return num;
@@ -161,6 +174,8 @@ namespace ServiceModel
             int num = db.Delete(comments);
             return num;
         }
+
+        
         #endregion
     }
 }
