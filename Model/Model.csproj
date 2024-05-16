@@ -43,7 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseEntity.cs" />
-    <Compile Include="Comments.cs" />
     <Compile Include="Locations.cs" />
     <Compile Include="SurfClubs.cs" />
     <Compile Include="User.cs" />

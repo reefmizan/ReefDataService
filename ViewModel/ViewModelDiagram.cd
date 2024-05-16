@@ -7,13 +7,6 @@
       <FileName>BaseDB.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ViewModel.CommentsDB">
-    <Position X="5" Y="4.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAYAAEAAACAAAAAAAAAAAAAAAgEAAAAAAAAAAAACEAA=</HashCode>
-      <FileName>CommentsDB.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="ViewModel.LocationsDB">
     <Position X="8.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
@@ -22,23 +15,23 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ViewModel.SurfClubsDB">
-    <Position X="3.25" Y="4.75" Width="1.5" />
+    <Position X="4.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAYAAEAAACAAAAAAAAAAAAAAAgEAAAAAAAAAAAACEAA=</HashCode>
+      <HashCode>AAYAAEAAECAAAAAAAAAAAAAAAgEAAAAAAAAAAAACEAA=</HashCode>
       <FileName>SurfClubsDB.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ViewModel.TypeSurfDB">
     <Position X="6.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAYAAEAAACAAAAAAAAAAAAAAAgEAAAAAAAAAIAACEAA=</HashCode>
+      <HashCode>AAYAAEAAACAAAAAAAAAAAQAAAgEAAAAAAAQAIAACEAA=</HashCode>
       <FileName>TypeSurfDB.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ViewModel.UserDB">
     <Position X="10.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAYAAEAAACAAAAAAAAAAAAAAAgEAAAAAAAAQAAACEAA=</HashCode>
+      <HashCode>AAYAAEAAACAAAAAAAACAAAAAAgEAAAAAAAAQAAACEAA=</HashCode>
       <FileName>UserDB.cs</FileName>
     </TypeIdentifier>
   </Class>

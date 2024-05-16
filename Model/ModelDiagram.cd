@@ -26,25 +26,8 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgAAAAIABAAAQAAAAEAAAAAAAAAAAEAAA=</HashCode>
       <FileName>TypeSurf.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Model.Comments">
-    <Position X="10.25" Y="2.75" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
-    </Compartments>
-    <TypeIdentifier>
-      <HashCode>AAADAQAAAgEAAAAAAAIAAAACAAAAAAAAAAAAAAAAAQA=</HashCode>
-      <FileName>Comments.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Model.CommentsList">
-    <Position X="10.25" Y="5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Comments.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Model.Locations">
@@ -53,7 +36,7 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAAAAIAAQACQAEAAEAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgAAAAIAAQAAQAEAAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Locations.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -70,7 +53,7 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAIAAAQCAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgAAAAIAIQAAQCEAAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SurfClubs.cs</FileName>
     </TypeIdentifier>
   </Class>

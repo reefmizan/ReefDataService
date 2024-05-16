@@ -38,11 +38,6 @@ namespace ServiceModel
         [OperationContract] int UpdateLocations(Locations locations);
         [OperationContract] int DeleteLocations(Locations locations);
         #endregion
-        #region Comments
-        [OperationContract] CommentsList GetAllComments();
-        [OperationContract] int InsertComments(Comments comments);
-        [OperationContract] int UpdateComments(Comments comments);
-        [OperationContract] int DeleteComments(Comments comments);
-        #endregion
+        
     }
 }

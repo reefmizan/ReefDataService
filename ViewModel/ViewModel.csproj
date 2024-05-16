@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDB.cs" />
-    <Compile Include="CommentsDB.cs" />
     <Compile Include="LocationsDB.cs" />
     <Compile Include="SurfClubsDB.cs" />
     <Compile Include="TypeSurfDB.cs" />

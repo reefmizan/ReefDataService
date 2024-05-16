@@ -149,33 +149,6 @@ namespace ServiceModel
             return num;
         }
         #endregion
-        #region Comments
-        public CommentsList GetAllComments()
-        {
-            CommentsDB db = new CommentsDB();
-            CommentsList list = db.SelectAll();
-            return list;
-        }
-        public int InsertComments(Comments comments)
-        {
-            CommentsDB db = new CommentsDB();
-            int num = db.Insert(comments);
-            return num;
-        }
-        public int UpdateComments(Comments comments)
-        {
-            CommentsDB db = new CommentsDB();
-            int num = db.Update(comments);
-            return num;
-        }
-        public int DeleteComments(Comments comments)
-        {
-            CommentsDB db = new CommentsDB();
-            int num = db.Delete(comments);
-            return num;
-        }
-
         
-        #endregion
     }
 }
